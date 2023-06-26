@@ -2,8 +2,8 @@
 <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-        <a href="index.html" class="logo me-auto"><img src="assets/img/logo_konawe utara.jpg" alt="" style="float:left" width="60px">
-            <p class="mt-2">RSUD KONAWE UTARA <br><br> selalu dihati</p>
+        <a href="/" class="logo me-auto"><img src="{{ asset('assets/img/logo_konawe utara.jpg') }}" alt="" style="float:left" width="50px">
+            <p class="mt-2">RSUD KONAWE UTARA <br><br> PROFISIONAL TULUS BERDEDIKASI</p>
         </a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->

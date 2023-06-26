@@ -1170,6 +1170,15 @@ section {
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .align-items-stretch {
+    justify-content: center;
+  }
+  .doctors img{
+    height: 200px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
@@ -1664,4 +1673,8 @@ section {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+  border: none;
 }

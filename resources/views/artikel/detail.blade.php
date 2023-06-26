@@ -5,11 +5,11 @@
 <!-- Artikel -->
 <!-- <div class="container"> -->
 <section>
-    <h3>ARTIKEL</h3>
     <div class="row">
-        <div class="col-lg-8 text-center">
-            @foreach($artikel as $a)
+        <div class="col-lg-8">
+            <h3>ARTIKEL</h3>
             <hr>
+            @foreach($artikel as $a)
             <h5>{{ $a->judul }}</h5>
             <img src="{{ asset('assets/img/about.jpg') }}" alt="" width="100%" height="180px">
             <p>{{ $a->desk_artikel }}</p>
@@ -21,16 +21,7 @@
             </p>
             @endforeach
         </div>
-
-        <div class="col-lg-4">
-            <hr>
-            <h6>KATEGORI</h6>
-            <ul>
-                @foreach($kategori as $k)
-                <li>{{ $k->nama_kategori }}</li>
-                @endforeach
-            </ul>
-        </div>
+        @include('partials.sidebar')
     </div>
 </section>
 <!-- </div> -->

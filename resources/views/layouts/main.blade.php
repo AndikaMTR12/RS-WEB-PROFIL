@@ -35,6 +35,10 @@
             $("#accordion").accordion({
                 collapsible: true
             });
+
+            $("#menu").menu({
+                items: "> :not(.ui-widget-header)"
+            });
         });
     </script>
 

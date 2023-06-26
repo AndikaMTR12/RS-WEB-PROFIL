@@ -3,11 +3,10 @@
 @section('container')
 <div style="height: 100px;"></div>
 <section>
-    <div data-aos="fade-down">
-        <h3>JADWAL DOKTER</h3>
-    </div>
     <div class="row" data-aos="fade-right" data-aos-delay="300">
-        <div class="col-lg-6 col-sm-12">
+        <div class="col-lg-8 col-sm-12">
+            <h3>JADWAL DOKTER</h3>
+            <hr>
             <div id="accordion">
                 <h3>IGD</h3>
                 <div>
@@ -29,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-sm-12"></div>
+        @include('partials.sidebar')
     </div>
 </section>
 @endsection

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-8 col-sm-12">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
                                 <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt="">
@@ -26,7 +26,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="200">
                             <div class="member-img">
                                 <img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt="">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="member-img">
                                 <img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt="">
@@ -62,7 +62,24 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="400">
+                            <div class="member-img">
+                                <img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Amanda Jepson</h4>
+                                <span>Neurosurgeon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="400">
                             <div class="member-img">
                                 <img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt="">
@@ -84,7 +101,7 @@
             <div class="col-lg-4 col-sm-12">
                 <h5>JADWAL PELAYANAN</h5>
                 <p>
-                <ol>
+                <ol class="jadwal">
                     <li>Pelayanan IGD & IGD PONEK 24 Jam</li>
                     <li>Pelayanan Poliklinik</li>
                     <ul>

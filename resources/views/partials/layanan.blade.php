@@ -6,9 +6,10 @@
         </div>
         <div data-aos="fade-up" data-aos-delay="100">
             <ul class="nav nav-tabs justify-content-center d-flex flex-row">
-                <li class="nav-item mt-2"><a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">CARI DOKTER</a></li>
-                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">MEDICAL CHECK UP</a></li>
-                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">CEK LABORATORIUM</a></li>
+                <li class="nav-item mt-2"><a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">KESEHATAN RAWAT JALAN</a></li>
+                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">KESEHATAN RAWAT INAP</a></li>
+                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">UNIT PENUNJANG MEDIS</a></li>
+                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">UNIT PENUNJANG NON MEDIS</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active show" id="tab-1">

@@ -28,25 +28,16 @@
         <div class="col-lg-6 col-sm-12" data-aos="fade-left" data-aos-delay="300">
             <h4>PROFIL RSUD KONAWE UTARA</h4>
             <hr>
-            <p style="text-align: justify;">RSUD Kabupaten Konawe Utara yang terletak di ibukota kabupaten yaitu Andowia, tepatnya di
-                Desa Lahimbua
-                Kecamatan Andowia. RSUD Kabupaten Konawe Utara, yang dibentuk berdasarkan Peraturan Daerah Nomor 4
-                tahun 2008,
-                sejak tanggal 22 Oktober 2008 telah mendapat lzin Operasional Sementara dari Dinas Kesehatan
-                Provinsi Sulawesi Tenggara yang akan berlaku selama 2 tahun,
-                dan pada tanggal 5 Januari 2009 berdasarkan
-                Keputusan Bupati Konawe Utara dan Nomor 1 tahun
-                2009 telah ditetapkan personil yang akan menjalankan
-                tugas operasional di RSUD Kabupaten Konawe Utara dan penetapan terakhir tanggal 6 September 2014
-                berdasarkan Keputusan Bupati Konawe Utara Nomor
-                383 Tahun 2014. Pada Tahun 2015 dengan berdasarkan
-                Peraturan Daerah Nomor 900 Tahun 2015
-                Rumah Sakit Umum Daerah Konawe Utara telah mendapat izin
-                operasional menjadi Badan Layanan
-                Umum Daerah Rumah Sakit Konawe Utara Kelas D. Dengan demikian
-                keberadaan BLUD Rumah Sakit
-                Konawe Utara dengan segaala sarana dan prasarana yang dimiliki dituntut untuk
-                dapat berperan aktif dalam upaya meningkatkan status kesehatan masyarakat di Kabupaten Konawe Utara.</p>
+            <p style="text-align: justify;">&ensp; Rumah Sakit Umum Daerah Kabupaten Konawe Utara berdiri di atas tanah seluas ± 8000 m2 pada tahun 2008, dan berganti nama menjadi BLUD Rumah Sakit Konawe Utara pada tahun 2016. <br>
+                &ensp; Pada tanggal 27 Juni 2016 berdasarkan Keputusan Bupati Konawe Utara Nomor 202 Tahun 2016 telah mendapatkan izin operasional Badan Layanan Umum Daerah Rumah Sakit Konawe Utara Kelas D. <br>
+                &ensp; BLUD Rumah Sakit Konawe Utara, terletak di ibukota Kabupaten yaitu Wanggudu tepatnya di Desa Lahimbua Kecamatan Andowia. <br>
+                Sebelah Utara :Terminal Asera <br>
+                Sebelah Timur : Pegunungan <br>
+                Sebelah Selatan : Tanah Penduduk <br>
+                Sebelah Barat : Pemukiman Warga dan Jalan Raya <br>
+                &ensp; Pimpinan BLUD Rumah Sakit Konawe Utara disebut Direktur dan menduduki jabatan struktural eselon III/a. Direktur dibantu oleh 4 (empat) orang, yaitu : Kepala Sub Bagian Tata Usaha, Kepala Seksi Pelayanan Medik, Kepala Seksi Keperawatan, dan Kepala Seksi Pengawasan dan Pengendalian, masing-masing menduduki jabatan struktural eselon IV/a.
+                &ensp; BLUD Rumah Sakit Konawe Utara selalu berusaha memberikan pelayanan kesehatan kepada masyarakat dalam bentuk pelayanan kesehatan prima.
+            </p>
             <hr>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.186586663921!2d122.13646477386274!3d-3.5443934422614576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d99bb0515e73e7d%3A0x80090f1afb060961!2sBLUD%20RS%20Kabupaten%20Konawe%20Utara!5e0!3m2!1sen!2sid!4v1687405447540!5m2!1sen!2sid" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
