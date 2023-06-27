@@ -3,7 +3,7 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Artikel</h2>
+            <h2>BERITA TERBARU</h2>
             <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
                 consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
                 in iste officiis commodi quidem hic quas.</p>
@@ -14,7 +14,7 @@
                 @foreach($artikel as $a)
                 <div class="swiper-slide">
                     <div class="testimonial-item">
-                        <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" width="100%" alt="">
+                        <img src="assets/img/{{ $a->image }}" class="img" width="100%" height="200px" alt="">
                         <h3>
                             {{ $a->judul }}
                         </h3>

@@ -177,6 +177,12 @@ h6 {
 
 #header .logo p {
   line-height: 10px;
+  color: #555555;
+}
+
+#header .logo p:hover {
+  line-height: 10px;
+  color: #9AE68E;
 }
 
 #header .logo img {
@@ -893,7 +899,7 @@ section {
   color: #9AE68E;
   border: 2px solid #9AE68E;
   border-radius: 20px;
-  padding: 3px 20px 3px 20px;
+  padding: 3px 20px 5px 20px;
 }
 
 .about .content a:hover{
@@ -1168,6 +1174,24 @@ section {
 
 .doctors .member:hover .social {
   opacity: 1;
+}
+
+.doctors .jadwal p{
+  margin-bottom: 0;
+}
+
+.doctors .doctor-link{
+  border: 2px solid #9AE68E;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.doctors .doctor-link:hover{
+  border: 2px solid #9AE68E;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #9AE68E;
+  padding: 10px;
 }
 
 @media (max-width: 768px) {
