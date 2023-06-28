@@ -6,25 +6,50 @@
         </div>
         <div data-aos="fade-up" data-aos-delay="100">
             <ul class="nav nav-tabs justify-content-center d-flex flex-row">
-                <li class="nav-item mt-2"><a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">KESEHATAN RAWAT JALAN</a></li>
-                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">KESEHATAN RAWAT INAP</a></li>
+                <li class="nav-item mt-2"><a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">PELAYANAN KESEHATAN RAWAT JALAN</a></li>
+                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">PELAYANAN KESEHATAN RAWAT INAP</a></li>
                 <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">UNIT PENUNJANG MEDIS</a></li>
-                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">UNIT PENUNJANG NON MEDIS</a></li>
+                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">UNIT PENUNJANG NON MEDIS</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active show" id="tab-1">
-                    <h1>1</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aspernatur consequatur quasi atque quis eos quos delectus veniam autem neque nobis tempore, obcaecati libero cupiditate facere voluptates incidunt pariatur est.</p>
+                    <h1>Fasilitas Pelayanan Kesehatan Rawat Jalan :</h1>
+                    <ul>
+                        <li>Poliklinik Penyakit Dalam</li>
+                        <li>Poliklinik Bedah</li>
+                        <li>Poliklinik Kebidanan dan Penyakit Kandung</li>
+                        <li>Poliklinik Anak</li>
+                        <li>Poliklinik Gigi & Penyakit Mulut</li>
+                        <li>Poliklinik Umum</li>
+                        <li>Instalasi Gawat Darurat (IGD)</li>
+                    </ul>
                 </div>
                 <div class="tab-pane" id="tab-2">
-                    <h1>2</h1>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a
-                        videna mareta paulona marka</p>
+                    <h1>Fasilitas Pelayanan Kesehatan Rawat Inap :</h1>
+                    <ul>
+                        <li>Ruangan Bedah</li>
+                        <li>Ruangan Interna</li>
+                        <li>Ruangan Kamar Mandi</li>
+                        <li>Ruangan Anak</li>
+                        <li>Ruangan Isolasi</li>
+                        <li>Ruangan Neonati/Bayi</li>
+                    </ul>
                 </div>
                 <div class="tab-pane" id="tab-3">
-                    <h1>3</h1>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a
-                        videna mareta paulona marka</p>
+                    <h1>Unit Penunjang Medis</h1>
+                    <ul>
+                        <li>Laboratorium</li>
+                        <li>Instalasi Farmasi</li>
+                        <li>Instalasi Radiologi</li>
+                        <li>Rehabilitas Medik/Fisioterapi</li>
+                    </ul>
+                </div>
+                <div class="tab-pane" id="tab-4">
+                    <h1>Unit Penunjang non Medis</h1>
+                    <ul>
+                        <li>Instalasi Gizi</li>
+                        <li>Loundry</li>
+                    </ul>
                 </div>
             </div>
         </div>

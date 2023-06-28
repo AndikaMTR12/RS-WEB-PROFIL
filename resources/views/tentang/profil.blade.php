@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6 col-sm-12 mb-3" data-aos="fade-right" data-aos-delay="300">
-            <img src="{{ asset('assets/img/about.jpg') }}" alt="" width="100%">
+            <img src="{{ asset('assets/img/profil-rs.jpg') }}" alt="" width="100%" height="500px">
             <h4 class="mt-3">VISI</h4>
             <hr>
             <p style="text-align: justify;">“Mewujudkan Konawe Utara yang lebih sejahtera dan berdaya saing.”</p>

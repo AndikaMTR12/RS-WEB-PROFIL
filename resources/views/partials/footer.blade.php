@@ -4,9 +4,9 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="footer-info">
-                        <h3>RSUD KONAWE UATARA</h3>
+                        <h3>RSUD KONAWE UTARA</h3>
                         <p>
                             <strong>Phone:</strong> 081240058671<br>
                             <strong>Email:</strong> rsudkonaweutara@gmail.com<br>
@@ -21,6 +21,14 @@
                     </div>
                 </div>
 
+                <div class="col-lg-6 col-md-6 footer-links align-content-end">
+                    <h4>Link Terkait</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://www.kemkes.go.id/">https://www.kemkes.go.id/</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://konaweutarakab.go.id">https://konaweutarakab.go.id</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="https://faskes.bpjs-kesehatan.go.id/aplicares/#/app/pnama/bylocation">https://faskes.bpjs-kesehatan.go.id/aplicares/#/app/pnama/bylocation</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

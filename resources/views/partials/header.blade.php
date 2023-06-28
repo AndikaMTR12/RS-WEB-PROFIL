@@ -3,7 +3,7 @@
     <div class="container d-flex align-items-center">
 
         <a href="/" class="logo me-auto"><img src="{{ asset('assets/img/logo_konawe utara.jpg') }}" alt="" style="float:left" width="50px">
-            <p class="mt-2">RSUD KONAWE UTARA <br><br> PROFESIONAL TULUS BERDEDIKASI</p>
+            <p class="mt-2">RSUD KONAWE UTARA <br><br> PROFESIONAL, TULUS, BERDEDIKASI</p>
         </a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
@@ -20,7 +20,7 @@
                 <li><a class="nav-link {{ $title == 'LAYANAN' ? 'active' : null}} scrollto " href="/layanan">Layanan</a></li>
                 <li class="dropdown"><a href="#"><span>Info</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a class="nav-link {{ $title == 'JADWAL DOKTER' ? 'active' : null}}" href="/jadwal-dokter">Jadwal Dokter</a></li>
+                        <li><a class="nav-link {{ $title == 'JADWAL PELAYANAN' ? 'active' : null}}" href="/jadwal-pelayanan">Jadwal Pelayanan</a></li>
                         <li><a class="nav-link {{ $title == 'TARIF PELAYANAN' ? 'active' : null}}" href="tarif-pelayanan">Tarif Layanan</a></li>
                     </ul>
                 </li>

@@ -21,6 +21,7 @@ class ArtikelController extends Controller
         $title = "ARTIKEL";
         $kategori = Kategori::all();
         $artikel = Artikel::where('id_artikel', $id)->get();
-        return view('artikel.detail', compact('title', 'artikel', 'kategori'));
+        $berita = $berita = Artikel::orderBy('id_artikel', 'desc')->paginate(3);
+        return view('artikel.detail', compact('title', 'artikel', 'kategori', 'berita'));
     }
 }

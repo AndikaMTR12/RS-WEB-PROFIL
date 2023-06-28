@@ -27,6 +27,6 @@ Route::get('/list-artikel', [ArtikelController::class, 'index']);
 Route::get('profil', [TentangController::class, 'profil']);
 Route::get('/dokter', [TentangController::class, 'dokter']);
 Route::get('/layanan', [LayananController::class, 'index']);
-Route::get('/jadwal-dokter', [InfoController::class, 'jadwal_dokter']);
+Route::get('/jadwal-pelayanan', [InfoController::class, 'jadwal_dokter']);
 Route::get('/tarif-pelayanan', [InfoController::class, 'tarif_pelayanan']);
 Route::get('/artikel/{id}', [ArtikelController::class, 'detail']);

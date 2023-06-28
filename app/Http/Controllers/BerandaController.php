@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\Dokter;
 use Illuminate\Http\Request;
 
 class BerandaController extends Controller
@@ -11,6 +12,7 @@ class BerandaController extends Controller
     {
         $title = "BERANDA";
         $artikel = Artikel::limit(3)->orderBy('id_artikel', 'desc')->get();
-        return view('beranda.index', compact('title', 'artikel'));
+        $dokter = Dokter::paginate(3);
+        return view('beranda.index', compact('title', 'artikel', 'dokter'));
     }
 }

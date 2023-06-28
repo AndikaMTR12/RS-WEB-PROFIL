@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dokter;
 use Illuminate\Http\Request;
 
 class TentangController extends Controller
@@ -15,6 +16,7 @@ class TentangController extends Controller
     public function dokter()
     {
         $title = "DOKTER";
-        return view('tentang.dokter', compact('title'));
+        $dokter = Dokter::all();
+        return view('tentang.dokter', compact('title', 'dokter'));
     }
 }

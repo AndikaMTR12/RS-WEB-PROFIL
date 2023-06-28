@@ -8,6 +8,7 @@
         <div class="row">
             <div class="col-lg-8 col-sm-12">
                 <div class="row">
+                    @foreach($dokter as $d)
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
@@ -20,47 +21,11 @@
                                 </div>
                             </div>
                             <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Medical Officer</span>
+                                <h4>{{ $d->nama_dokter }}</h4>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="200">
-                            <div class="member-img">
-                                <img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Anesthesiologist</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="300">
-                            <div class="member-img">
-                                <img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>Cardiology</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     <div class="d-flex justify-content-center mt-3 mb-3">
                         <a href="/dokter" class="doctor-link">Tampilkan Selengkapnya</a>
                     </div>

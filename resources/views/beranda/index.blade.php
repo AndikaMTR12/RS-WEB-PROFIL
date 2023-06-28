@@ -11,7 +11,7 @@
 
         <div class="row">
             <div class="col-lg-6 col-sm-4" data-aos="fade-right">
-                <img src="{{ asset('assets/img/about.jpg') }}" class="img-fluid" alt="">
+                <img src="{{ asset('assets/img/profil-rs.jpg') }}" class="img-fluid" alt="" height="300px">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
                 <h3>PROFIL RSUD KONAWE UTARA</h3>
@@ -61,16 +61,9 @@
     <div class="container">
 
         <div class="section-title">
-            <h2>Call Centre</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-                in iste officiis commodi quidem hic quas.</p>
+            <h2>KRITIK DAN SARAN</h2>
         </div>
 
-    </div>
-
-    <div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.186586663921!2d122.13646477386274!3d-3.5443934422614576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d99bb0515e73e7d%3A0x80090f1afb060961!2sBLUD%20RS%20Kabupaten%20Konawe%20Utara!5e0!3m2!1sen!2sid!4v1687405447540!5m2!1sen!2sid" width="100%" height="350px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="container">
@@ -84,21 +77,21 @@
                         <div class="info-box">
                             <i class="bx bx-map"></i>
                             <h3>Our Address</h3>
-                            <p>A108 Adam Street, New York, NY 535022</p>
+                            <p>Jl. Poros Kendari-Asera, Desa Lahimbua, kec. Andowia, Kab. Konawe Utara</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="info-box mt-4">
                             <i class="bx bx-envelope"></i>
                             <h3>Email Us</h3>
-                            <p>info@example.com<br>contact@example.com</p>
+                            <p>rsudkonaweutara@gmail.com</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="info-box mt-4">
                             <i class="bx bx-phone-call"></i>
                             <h3>Call Us</h3>
-                            <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                            <p>081240058671</p>
                         </div>
                     </div>
                 </div>
