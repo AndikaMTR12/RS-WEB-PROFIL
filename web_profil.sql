@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2023 at 06:33 AM
+-- Generation Time: Jul 05, 2023 at 07:19 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.4
 
@@ -75,7 +75,7 @@ INSERT INTO `dokters` (`id_dokter`, `foto_dokter`, `nama_dokter`, `nip`, `spesia
 (5, 'default.png', 'dr. Dwi Prasetyo Irawanto', '199212242022031011', 0, NULL, NULL),
 (6, 'default.png', 'dr. Elda Citra Sari', '19949826292101103', 0, NULL, NULL),
 (7, 'default.png', 'dr. Siska, M.Kes', '19860426202101115', 0, NULL, NULL),
-(8, 'default.png', 'dr. Dewi Sarli Tombili, Sp. Pd', '198110212009032005', 1, NULL, NULL),
+(8, 'dokter dewi.jpeg', 'dr. Dewi Sarli Tombili, Sp. Pd', '198110212009032005', 1, NULL, NULL),
 (9, 'default.png', 'dr. Taufik Ardianto, Sp.B', '19840622202001104', 2, NULL, NULL),
 (10, 'default.png', 'dr. Anny Mariani Sanusi, Sp.A', '19821026202207205', 3, NULL, NULL),
 (11, 'default.png', 'dr. Putu Adi Sujana Putra, Sp.OG', '198708182014111001', 4, NULL, NULL),
