@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\Spesialis;
 use Illuminate\Http\Request;
 
 class LayananController extends Controller
@@ -11,6 +12,7 @@ class LayananController extends Controller
     {
         $title = "LAYANAN";
         $berita = Artikel::orderBy('id_artikel', 'desc')->paginate(3);
-        return view('layanan.index', compact('title', 'berita'));
+        $spesialis = Spesialis::all();
+        return view('layanan.index', compact('title', 'berita', 'spesialis'));
     }
 }

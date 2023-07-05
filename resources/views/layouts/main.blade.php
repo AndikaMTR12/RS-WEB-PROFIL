@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>{{ $title }} - RS KONUT</title>
+    <title>{{ $title }} - RSUD KONUT</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/logo_konawe utara.jpg') }}" rel="icon">
     <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -60,7 +60,7 @@
                 <i class="bi bi-phone"></i> Call Center : 085345432016
             </div>
             <div class="align-items-center d-none d-md-flex">
-                <i class="bi bi-clock"></i> Senin - Sabtu, 08.00 - 10.00 WITA
+                <i class="bi bi-clock"></i> Senin - Jumat, 08.30 - 14.00 WITA
             </div>
         </div>
     </div>

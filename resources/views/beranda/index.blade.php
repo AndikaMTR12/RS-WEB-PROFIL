@@ -10,7 +10,7 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-6 col-sm-4" data-aos="fade-right">
+            <div class="col-lg-6 col-md-12 col-sm-12" data-aos="fade-right">
                 <img src="{{ asset('assets/img/profil-rs.jpg') }}" class="img-fluid" alt="" height="300px">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
@@ -30,10 +30,8 @@
     <div class="container" data-aos="zoom-in">
 
         <div class="text-center">
-            <h3>In an emergency? Need help now?</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
+            <h3>Registrasi Online</h3>
+            <p> Daftarkan diri anda untuk mendapatkan pelayanan kesehatan dari kami, melalui WhatsApp.</p>
             <a class="cta-btn scrollto" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrasi Online</a>
         </div>
 
@@ -45,7 +43,7 @@
         <div class="modal-content">
             <div class="modal-body text-center">
                 <p>SILAHKAN MELAKUKAN PENDAFTARAN</p>
-                <a href="https://api.whatsapp.com/send/?phone=081240058671&text&type=phone_number&app_absent=0" class="btn">Whatsapp</a>
+                <a href="https://api.whatsapp.com/send/?phone=0852345432016&text&type=phone_number&app_absent=0" class="btn">Whatsapp</a>
             </div>
         </div>
     </div>
@@ -61,7 +59,7 @@
     <div class="container">
 
         <div class="section-title">
-            <h2>KRITIK DAN SARAN</h2>
+            <h2>ADUAN & KONSULTASI</h2>
         </div>
 
     </div>
@@ -76,22 +74,22 @@
                     <div class="col-md-12">
                         <div class="info-box">
                             <i class="bx bx-map"></i>
-                            <h3>Our Address</h3>
+                            <h3>Alamat kami</h3>
                             <p>Jl. Poros Kendari-Asera, Desa Lahimbua, kec. Andowia, Kab. Konawe Utara</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="info-box mt-4">
                             <i class="bx bx-envelope"></i>
-                            <h3>Email Us</h3>
+                            <h3>Email</h3>
                             <p>rsudkonaweutara@gmail.com</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="info-box mt-4">
                             <i class="bx bx-phone-call"></i>
-                            <h3>Call Us</h3>
-                            <p>081240058671</p>
+                            <h3>Phone</h3>
+                            <p>0852345432016</p>
                         </div>
                     </div>
                 </div>
@@ -102,14 +100,18 @@
                 <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama Anda" required="">
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email Anda" required="">
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Kategori</option>
+                            <option value="1">Aduan</option>
+                            <option value="2">Konsultasi</option>
+                        </select>
                     </div>
                     <div class="form-group mt-3">
                         <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
@@ -117,7 +119,7 @@
                     <div class="my-3">
                         <div class="loading">Loading</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <div class="sent-message">Pesan Anda telah dikirim. Terima Kasih!</div>
                     </div>
                     <div class="text-center"><button type="submit">Send Message</button></div>
                 </form>

@@ -9,10 +9,10 @@
             <div class="col-lg-8 col-sm-12">
                 <div class="row">
                     @foreach($dokter as $d)
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="col-lg-4 col-md-6  align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
-                                <img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt="">
+                                <img src="assets/img/doctors/{{ $d->foto_dokter }}" class="img-fluid" alt="">
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>

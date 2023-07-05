@@ -50,6 +50,14 @@
                         <li>Loundry</li>
                     </ul>
                 </div>
+                <h3>DOKTER SPESIALIS</h3>
+                <div>
+                    <ul>
+                        @foreach($spesialis as $s)
+                        <li>{{ $s->spesialis }}</li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
         @include('partials.sidebar')

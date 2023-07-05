@@ -10,6 +10,7 @@
                 <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">PELAYANAN KESEHATAN RAWAT INAP</a></li>
                 <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">UNIT PENUNJANG MEDIS</a></li>
                 <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">UNIT PENUNJANG NON MEDIS</a></li>
+                <li class="nav-item mt-2"><a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-5">DOKTER SPESIALIS</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active show" id="tab-1">
@@ -49,6 +50,14 @@
                     <ul>
                         <li>Instalasi Gizi</li>
                         <li>Loundry</li>
+                    </ul>
+                </div>
+                <div class="tab-pane" id="tab-5">
+                    <h1>Dokter Spesialis</h1>
+                    <ul>
+                        @foreach($spesialis as $s)
+                        <li>{{ $s->spesialis }}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
