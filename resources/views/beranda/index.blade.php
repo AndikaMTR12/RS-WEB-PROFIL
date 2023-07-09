@@ -25,34 +25,11 @@
     </div>
 </section><!-- End Tentang Section -->
 
-<!-- ======= Cta Section ======= -->
-<section id="cta" class="cta">
-    <div class="container" data-aos="zoom-in">
-
-        <div class="text-center">
-            <h3>Registrasi Online</h3>
-            <p> Daftarkan diri anda untuk mendapatkan pelayanan kesehatan dari kami, melalui WhatsApp.</p>
-            <a class="cta-btn scrollto" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrasi Online</a>
-        </div>
-
-    </div>
-</section><!-- End Cta Section -->
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body text-center">
-                <p>SILAHKAN MELAKUKAN PENDAFTARAN</p>
-                <a href="https://api.whatsapp.com/send/?phone=0852345432016&text&type=phone_number&app_absent=0" class="btn">Whatsapp</a>
-            </div>
-        </div>
-    </div>
-</div>
-@include('partials.dokter')
+@include('partials.artikel')
 
 @include('partials.layanan')
 
-@include('partials.artikel')
+@include('partials.dokter')
 
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
@@ -95,9 +72,14 @@
                 </div>
 
             </div>
-
             <div class="col-lg-6">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{session()->get('message') }}
+                </div>
+                @endif
+                <form action="/aduan-konsultasi" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="text" name="name" class="form-control" id="name" placeholder="Nama Anda" required="">
@@ -117,11 +99,8 @@
                         <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
                     </div>
                     <div class="my-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Pesan Anda telah dikirim. Terima Kasih!</div>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    <div class="text-center"><button type="submit">Kirim</button></div>
                 </form>
             </div>
 
@@ -130,4 +109,27 @@
     </div>
 </section><!-- End Contact Section -->
 
+<!-- ======= Cta Section ======= -->
+<section id="cta" class="cta">
+    <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+            <h3>Registrasi Online</h3>
+            <p> Daftarkan diri anda untuk mendapatkan pelayanan kesehatan dari kami, melalui WhatsApp.</p>
+            <a class="cta-btn scrollto" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrasi Online</a>
+        </div>
+
+    </div>
+</section><!-- End Cta Section -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <p>SILAHKAN MELAKUKAN PENDAFTARAN</p>
+                <a href="https://api.whatsapp.com/send/?phone=%2B6285345432016&text&type=phone_number&app_absent=0" class="btn">Whatsapp</a>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

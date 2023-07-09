@@ -60,7 +60,7 @@
                 <i class="bi bi-phone"></i> Call Center : 085345432016
             </div>
             <div class="align-items-center d-none d-md-flex">
-                <i class="bi bi-clock"></i> Senin - Jumat, 08.30 - 14.00 WITA
+                PELAYANAN RAWAT JALAN &nbsp;<i class="bi bi-clock"></i> Senin - Jumat, 08.30 - 14.00 WITA
             </div>
         </div>
     </div>

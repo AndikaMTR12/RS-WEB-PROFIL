@@ -19,4 +19,10 @@ class TentangController extends Controller
         $dokter = Dokter::all();
         return view('tentang.dokter', compact('title', 'dokter'));
     }
+
+    public function maklumat()
+    {
+        $title = "MAKLUMAT PELAYANAN";
+        return view('tentang.maklumat', compact('title'));
+    }
 }

@@ -11,7 +11,7 @@
                 @foreach($artikel as $a)
                 <div class="swiper-slide">
                     <div class="testimonial-item">
-                        <img src="assets/img/{{ $a->image }}" class="img" width="100%" height="200px" alt="">
+                        <img src="assets/img/berita/{{ $a->image }}" class="img" width="100%" height="200px" alt="">
                         <h3>
                             {{ $a->judul }}
                         </h3>

@@ -11,16 +11,22 @@
             <h3>LAYANAN</h3>
             <hr>
             <div id="accordion">
+                <h3>EMERGENCY</h3>
+                <div>
+                    <ul>
+                        <li>Instalasi Gawat Darurat (IGD)</li>
+                        <li>IGD Ponek</li>
+                    </ul>
+                </div>
                 <h3>KESEHATAN RAWAT JALAN</h3>
                 <div>
                     <ul>
                         <li>Poliklinik Penyakit Dalam</li>
                         <li>Poliklinik Bedah</li>
-                        <li>Poliklinik Kebidanan dan Penyakit Kandung</li>
+                        <li>Poliklinik Kebidanan dan Penyakit Kandungan</li>
                         <li>Poliklinik Anak</li>
                         <li>Poliklinik Gigi & Penyakit Mulut</li>
                         <li>Poliklinik Umum</li>
-                        <li>Instalasi Gawat Darurat (IGD)</li>
                     </ul>
                 </div>
                 <h3>KESEHATAN RAWAT INAP</h3>
@@ -28,7 +34,7 @@
                     <ul>
                         <li>Ruangan Bedah</li>
                         <li>Ruangan Interna</li>
-                        <li>Ruangan Kamar Mandi</li>
+                        <li>Ruangan Kamar Bersalin</li>
                         <li>Ruangan Anak</li>
                         <li>Ruangan Isolasi</li>
                         <li>Ruangan Neonati/Bayi</li>

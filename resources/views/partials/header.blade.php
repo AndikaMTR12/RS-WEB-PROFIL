@@ -3,7 +3,7 @@
     <div class="container d-flex align-items-center">
 
         <a href="/" class="logo me-auto"><img src="{{ asset('assets/img/logo_konawe utara.jpg') }}" alt="" style="float:left" width="50px">
-            <p class="mt-2"><strong>RSUD KONAWE UTARA</strong><br><br> PROFESIONAL, TULUS, BERDEDIKASI</p>
+            <p class="mt-2"><strong>RSUD KONAWE UTARA</strong><br><br> <span style="font-size: 10px;">PROFESIONAL, TULUS, BERDEDIKASI</span> </p>
         </a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
@@ -15,6 +15,7 @@
                     <ul>
                         <li><a class="nav-link {{ $title == 'PROFIL' ? 'active' : null}}" href="/profil">Profil</a></li>
                         <li><a class="nav-link {{ $title == 'DOKTER' ? 'active' : null}}" href="/dokter">Dokter</a></li>
+                        <li><a class="nav-link {{ $title == 'MAKLUMAT PELAYANAN' ? 'active' : null}}" href="/maklumat-pelayanan">Maklumat Pelayanan</a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link {{ $title == 'LAYANAN' ? 'active' : null}} scrollto " href="/layanan">Layanan</a></li>
@@ -30,15 +31,16 @@
                 @endif
                 <li class="dropdown"><a href="#contact"><span>Aduan & Konsultasi</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a class="nav-link {{ $title == 'JADWAL PELAYANAN' ? 'active' : null}}" href="#">Aduan</a></li>
-                        <li><a class="nav-link {{ $title == 'TARIF PELAYANAN' ? 'active' : null}}" href="#">Konsultasi</a></li>
+                        <li><a class="nav-link {{ $title == 'JADWAL PELAYANAN' ? 'active' : null}}" href="/aduan">Aduan</a></li>
+                        <li><a class="nav-link {{ $title == 'TARIF PELAYANAN' ? 'active' : null}}" href="/konsultasi">Konsultasi</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Publikasi</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a class="nav-link {{ $title == 'JADWAL PELAYANAN' ? 'active' : null}}" href="#">Laporan Pengaduan</a></li>
-                        <li><a class="nav-link {{ $title == 'TARIF PELAYANAN' ? 'active' : null}}" href="#">Standar Layanan</a></li>
-                        <li><a class="nav-link {{ $title == 'TARIF PELAYANAN' ? 'active' : null}}" href="#">SKM</a></li>
+                        <li><a class="nav-link {{ $title == 'LAPORAN PENGADUAN' ? 'active' : null}}" href="/laporan-pengaduan">Laporan Pengaduan</a></li>
+                        <li><a class="nav-link {{ $title == 'STANDAR LAYANAN' ? 'active' : null}}" href="/standar-layanan">Standar Layanan</a></li>
+                        <li><a class="nav-link {{ $title == 'SKM' ? 'active' : null}}" href="/skm">SKM</a></li>
+                        <li><a class="nav-link {{ $title == 'INDIKATOR MUTU NASIONAL' ? 'active' : null}}" href="/indikator-mutu-nasional">Indikator Mutu Nasional</a></li>
                     </ul>
                 </li>
 

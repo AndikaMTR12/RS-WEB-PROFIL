@@ -13,9 +13,16 @@ class BerandaController extends Controller
     {
         $title = "BERANDA";
         $artikel = Artikel::limit(3)->orderBy('id_artikel', 'desc')->get();
-        $dokter = Dokter::whereIn('nama_dokter', ['dr. Dewi Sarli Tombili, Sp. Pd', 'dr. Muhammad Run Marewa', 'dr. Wangga Pramono Lasandara'])->orderBy('nama_dokter', 'asc')->get();
+        // $dokter = Dokter::whereIn('id_dokter', [8, 9, 10, 1, 2, 3])->get();
+        $dokterumum = Dokter::whereIn('id_dokter', [1, 2, 3])->get();
+        $dokterspes = Dokter::whereIn('id_dokter', [8, 9, 10])->get();
         // dd($dokter);
         $spesialis = Spesialis::all();
-        return view('beranda.index', compact('title', 'artikel', 'dokter', 'spesialis'));
+        return view('beranda.index', compact('title', 'artikel', 'dokterumum', 'dokterspes', 'spesialis'));
+    }
+
+    public function aduan()
+    {
+        return redirect()->back()->with('message', 'Terima kasih telah mengirimkan pesan, untuk selanjutnya akan ditindaklanjuti oleh TIM Rumah Sakit');
     }
 }

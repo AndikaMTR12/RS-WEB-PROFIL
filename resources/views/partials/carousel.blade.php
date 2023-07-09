@@ -1,3 +1,4 @@
+<div style="height: 127px;"></div>
 <!-- ======= Hero Section ======= -->
 <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -23,18 +24,6 @@
                     <a href="#about" class="btn-get-started scrollto">Read More</a>
                 </div> -->
             </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
-                <!-- <div class="container">
-                    <h2>Sequi ea ut et est quaerat</h2>
-                    <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
-                        Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus
-                        deleniti vel.</p>
-                    <a href="#about" class="btn-get-started scrollto">Read More</a>
-                </div> -->
-            </div>
-
         </div>
 
         <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">

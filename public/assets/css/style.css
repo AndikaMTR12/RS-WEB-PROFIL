@@ -146,6 +146,10 @@ h6 {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
+#header p{
+  font-size: 12px;
+}
+
 @media (max-width: 992px) {
   #header {
     padding: 15px 0;
@@ -494,7 +498,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100vh;
+  height: 700px;
   background-color: rgba(60, 60, 60, 0.8);
   overflow: hidden;
   position: relative;
@@ -868,6 +872,19 @@ section {
   color: #9AE68E;
 }
 
+
+.jadwal-pelayanan p{
+  margin-top: 90px;
+  font-size: 20px;
+}
+
+@media (max-width: 576px) {
+  .jadwal-pelayanan p{
+    margin-top: 60px;
+    font-size: 20px;
+  }
+}
+
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
@@ -921,7 +938,8 @@ section {
 
 .layanan .nav-link {
   border: 0;
-  padding: 10px;
+  padding: 5px;
+  font-size: 12px;
   color: #555555;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
@@ -930,7 +948,7 @@ section {
 }
 
 .layanan .nav-link h4 {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
   transition: 0.3s;
 }
@@ -1213,6 +1231,12 @@ section {
     justify-content: center;
   }
 }
+@media (max-width: 576px) {
+  .doctors .img-fluid{
+    width: 230px;
+    height: 200px;
+  }
+}
 
 /*--------------------------------------------------------------
 # Gallery
@@ -1441,7 +1465,20 @@ section {
   box-shadow: 0 0 20px rgba(214, 215, 216, 0.5);
   padding: 20px 0 30px 0;
 }
-
+.contact button{
+  padding: 5px 10px;
+  background-color: #9AE68E;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px;
+}
+.contact button:hover{
+  padding: 5px 10px;
+  background-color: #8AE68f;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px;
+}
 .contact .info-box i {
   font-size: 32px;
   color: #9AE68E;

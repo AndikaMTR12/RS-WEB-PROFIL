@@ -11,7 +11,7 @@
             <hr>
             @foreach($artikel as $a)
             <h5>{{ $a->judul }}</h5>
-            <img src="{{ asset('assets/img') }}/{{$a->image }}" alt="" width="100%" height="200px">
+            <img src="{{ asset('assets/img/berita/') }}/{{$a->image }}" alt="" width="100%" height="200px">
             <p style="text-align: justify;"><?php echo nl2br($a->desk_artikel) ?></p>
             <p class="fw-light text-end">
                 <i class="fa-solid fa-newspaper"></i>
