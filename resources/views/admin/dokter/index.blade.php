@@ -8,29 +8,35 @@
             <!-- /.box-header -->
             <div class="box-body no-padding">
                 <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">
-                    Tambah Publikasi
+                    Tambah Dokter
                 </button>
                 <table class="table table-sm">
                     <tbody>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>Jenis Publikasi</th>
-                            <th>Nama Publiaksi</th>
-                            <th>File</th>
+                            <th>Foto Dokter</th>
+                            <th>Nama Dokter</th>
+                            <th>Nip</th>
+                            <th>Spesialis</th>
                             <th>Aksi</th>
                         </tr>
                         <?php
                         $no = 1;
                         ?>
-                        @foreach($publikasi as $p)
+                        @foreach($dokter as $d)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $p->menu_publikasi->menu_publikasi }}</td>
-                            <td>{{ $p->nama_publikasi }}</td>
-                            <td>{{ $p->nama_file }}</td>
+                            <td><img src="{{ asset('assets/img/doctors') }}/{{ $d->foto_dokter }}" alt="berita" width="100px" height="130px"></td>
+                            <td>{{ $d->nama_dokter }}</td>
+                            <td>{{ $d->nip }}</td>
+                            @if($d->spesialis == 0)
+                            <td>Dokter Umum</td>
+                            @else
+                            <td>{{ $d->spes->spesialis }}</td>
+                            @endif
                             <td>
-                                <a href="/publikasi/{{ $p->id_publikasi }}/hapus" class="btn text-white bg-red"><i class="icon-trash-can"></i></a>
-                                <a href="/publikasi/{{ $p->id_publikasi }}" class="btn text-white bg-green"><i class="icon-edit"></i></a>
+                                <a href="/dokter/{{ $d->id_dokter }}/hapus" class="btn text-white bg-red"><i class="icon-trash-can"></i></a>
+                                <a href="/dokter/{{ $d->id_dokter }}" class="btn text-white bg-green"><i class="icon-edit"></i></a>
                             </td>
                         </tr>
                         @endforeach
@@ -49,30 +55,34 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Publikasi</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Dokter</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/publikasi/tambah" method="POST" enctype="multipart/form-data">
+            <form action="/dokter/tambah" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     @csrf
                     <div class="form-group">
-                        <label>Jenis Publiaksi</label>
-                        <select name="menu_publikasi" class="form-control">
-                            <option selected>Kategori</option>
-                            @foreach($menu_publikasi as $m)
-                            <option value="{{ $m->id_menu_publikasi }}">{{ $m->menu_publikasi }}</option>
+                        <label>Foto Dokter</label>
+                        <input type="file" name="foto_dokter" class="form-control" style="border: none;">
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Dokter</label>
+                        <input type="text" name="nama_dokter" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>NIP</label>
+                        <input type="text" name="nip" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Spesialis</label>
+                        <select name="spesialis" class="form-control">
+                            <option selected>Spesialis</option>
+                            @foreach($spesialis as $s)
+                            <option value="{{ $s->id_spesialis }}">{{ $s->spesialis }}</option>
                             @endforeach
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Nama Publikasi</label>
-                        <input type="text" name="nama_publikasi" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>File</label>
-                        <input type="file" name="nama_file" class="form-control" style="border: none;" accept=".doc,.docx,.pdf,.xls,.xlsx">
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -9,7 +9,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>{{ $title }}</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/admin/css/app.css">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/app.css') }}">
     <style>
         .loader {
             position: fixed;
@@ -119,7 +119,7 @@
         <aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
             <section class="sidebar">
                 <div class="w-80px mt-3 mb-3 ml-3">
-                    <img src="assets/admin/img/basic/logo.png" alt="">
+                    <!-- <img src="{{ asset('assets/admin/img/basic/logo.png') }}" alt=""> -->
                 </div>
                 <div class="relative">
                     <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false" aria-controls="userSettingsCollapse" class="btn-fab btn-fab-sm absolute fab-right-bottom fab-top btn-primary shadow1 ">
@@ -128,7 +128,7 @@
                     <div class="user-panel p-3 light mb-2">
                         <div>
                             <div class="float-left image">
-                                <img class="user_avatar" src="assets/admin/img/dummy/u2.png" alt="User Image">
+                                <img class="user_avatar" src="{{ asset('assets/admin/img/dummy/u2.png') }}" alt="User Image">
                             </div>
                             <div class="float-left info">
                                 <h6 class="font-weight-light mt-2 mb-1">{{ auth()->user()->username }}</h6>
@@ -153,11 +153,24 @@
                         </a>
                     </li>
                     <li class="treeview"><a href="/berita">
-                            <i class="icon icon-sailing-boat-water purple-text s-18"></i> <span>Berita</span>
+                            <i class="icon icon-newspaper purple-text s-14"></i> <span>Berita</span>
                         </a>
                     </li>
                     <li class="treeview"><a href="/publikasi">
-                            <i class="icon icon-sailing-boat-water purple-text s-18"></i> <span>Publikasi</span>
+                            <i class="icon icon-cloud-upload2 purple-text s-18"></i> <span>Publikasi</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/dokter">
+                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Dokter</span>
+                        </a>
+                    </li>
+                    <li class="header"><strong>Master Data</strong></li>
+                    <li class="treeview"><a href="/spesialis">
+                            <i class="icon icon-user-o purple-text s-18"></i> <span>Spesialis</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/kategori">
+                            <i class="icon icon-clipboard-list purple-text s-18"></i> <span>Kategori</span>
                         </a>
                     </li>
                 </ul>
@@ -219,15 +232,15 @@
                             <!-- User Account-->
                             <li class="dropdown custom-dropdown user user-menu ">
                                 <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <img src="assets/admin/img/dummy/u8.png" class="user-image" alt="User Image">
+                                    <img src="{{ asset('assets/admin/img/dummy/u8.png') }}" class="user-image" alt="User Image">
                                     <i class="icon-more_vert "></i>
                                 </a>
                                 <div class="dropdown-menu p-4 dropdown-menu-right">
                                     <div class="row box justify-content-between my-4">
                                         <div class="col">
-                                            <a href="#">
+                                            <a href="#" data-toggle="modal" data-target="#exampleModal">
                                                 <i class="icon-apps purple lighten-2 avatar  r-5"></i>
-                                                <div class="pt-1">Apps</div>
+                                                <div class="pt-1">Log out</div>
                                             </a>
                                         </div>
                                         <div class="col"><a href="#">
@@ -261,25 +274,6 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <hr>
-                                    <div class="row box justify-content-between my-4">
-                                        <div class="col">
-                                            <a href="#">
-                                                <i class="icon-apps purple lighten-2 avatar  r-5"></i>
-                                                <div class="pt-1">Apps</div>
-                                            </a>
-                                        </div>
-                                        <div class="col"><a href="#">
-                                                <i class="icon-beach_access pink lighten-1 avatar  r-5"></i>
-                                                <div class="pt-1">Profile</div>
-                                            </a></div>
-                                        <div class="col">
-                                            <a href="#">
-                                                <i class="icon-perm_data_setting indigo lighten-2 avatar  r-5"></i>
-                                                <div class="pt-1">Settings</div>
-                                            </a>
-                                        </div>
-                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -306,10 +300,31 @@
         <div class="control-sidebar-bg shadow white fixed"></div>
     </div>
     <!--/#app -->
-    <script src="assets/admin/js/app.js"></script>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pesan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <p>Apakah Anda Yakin Ingin Logout?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                        <button type="submit" class="btn btn-primary">Ya</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-
+    <script src="{{ asset('assets/admin/js/app.js') }}"></script>
 
     <!--
 --- Footer Part - Use Jquery anywhere at page.

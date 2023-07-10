@@ -10,11 +10,8 @@
                     <div class="float-right">
                         <span class="icon icon-note-list text-light-blue s-48"></span>
                     </div>
-                    <div class="counter-title">Web Projects</div>
-                    <h5 class="sc-counter mt-3">1228</h5>
-                </div>
-                <div class="progress progress-xs r-0">
-                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="128"></div>
+                    <div class="counter-title">Jumlah Berita</div>
+                    <h5 class="sc-counter mt-3">{{ $berita }}</h5>
                 </div>
             </div>
         </div>
