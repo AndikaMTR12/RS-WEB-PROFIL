@@ -8,7 +8,7 @@
                     <div class="footer-info">
                         <h3>RSUD KONAWE UTARA</h3>
                         <p>
-                            <strong>Phone:</strong> 0852345432016<br>
+                            <strong>Phone:</strong> 085345432016<br>
                             <strong>Email:</strong> rsudkonaweutara@gmail.com<br>
                         </p>
                         <div class="social-links mt-3">

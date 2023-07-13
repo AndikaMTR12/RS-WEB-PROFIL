@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <div class="card">
         <div class="card-body">
-            <form action="/dokter/update" method="POST" enctype="multipart/form-data">
+            <form action="/dokter-admin/update" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method("PUT")
                 <div class="modal-body">
@@ -12,7 +12,8 @@
                     <input type="hidden" name="id_dokter" value="{{ $d->id_dokter }}">
                     <div class="form-group">
                         <label>Foto Dokter</label>
-                        <input type="file" name="foto_dokter" class="form-control" style="border: none;">
+                        <input type="file" name="foto_dokter" id="gambarInput" class="form-control" style="border: none;">
+                        <img id="gambarPreview" src="#" alt="Preview Gambar" style="display: none; max-width: 200px;">
                     </div>
                     <div class="form-group">
                         <label>Nama Dokter</label>
@@ -22,6 +23,7 @@
                         <label>NIP</label>
                         <input type="text" name="nip" class="form-control" value="{{ $d->nip }}">
                     </div>
+                    @if($d->spesialis !== 0)
                     <div class="form-group">
                         <label>Spesialis</label>
                         <select name="spesialis" class="form-control">
@@ -31,12 +33,12 @@
                             @endforeach
                         </select>
                     </div>
+                    @else
+                    <input type="hidden" name="spesialis" value="0">
+                    @endif
                     @endforeach
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
+                <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
         </div>
     </div>

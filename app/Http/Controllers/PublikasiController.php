@@ -83,7 +83,7 @@ class PublikasiController extends Controller
             $tujuan_upload = 'storage/publikasi';
             $file->move($tujuan_upload, $nama_file);
 
-            Publikasi::where('id_artikel', $request->id_artikel)->update([
+            Publikasi::where('id_publikasi', $request->id_publikasi)->update([
                 'id_menu_publikasi' => $request->menu_publikasi,
                 'nama_publikasi' => $request->nama_publikasi,
                 'nama_file' => $nama_file

@@ -13,9 +13,9 @@
                     <h1>SELAMAT DATANG DI <br> RSUD KONAWE UTARA</h1>
                 </div>
             </div>
-
+            @foreach($slider as $s)
             <!-- Slide 2 -->
-            <div class="carousel-item" style="background-image: url(assets/img/slide/igd.jpg)">
+            <div class="carousel-item" style="background-image: url('assets/img/slide/{{ $s->nama_slider }}')">
                 <!-- <div class="container">
                     <h2>Lorem Ipsum Dolor</h2>
                     <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
@@ -24,6 +24,7 @@
                     <a href="#about" class="btn-get-started scrollto">Read More</a>
                 </div> -->
             </div>
+            @endforeach
         </div>
 
         <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">

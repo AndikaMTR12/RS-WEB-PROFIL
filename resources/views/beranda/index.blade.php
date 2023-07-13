@@ -82,21 +82,21 @@
                     @csrf
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Nama Anda" required="">
+                            <input type="text" name="nama" class="form-control" id="name" placeholder="Nama Anda" required="">
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
                             <input type="email" class="form-control" name="email" id="email" placeholder="Email Anda" required="">
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <select class="form-select" aria-label="Default select example">
+                        <select name="jenis_pesan" class="form-select" aria-label="Default select example">
                             <option selected>Kategori</option>
-                            <option value="1">Aduan</option>
-                            <option value="2">Konsultasi</option>
+                            <option value="Aduan">Aduan</option>
+                            <option value="Konsultasi">Konsultasi</option>
                         </select>
                     </div>
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="7" placeholder="Message" required=""></textarea>
+                        <textarea class="form-control" name="pesan" rows="7" placeholder="Message" required=""></textarea>
                     </div>
                     <div class="my-3">
                     </div>

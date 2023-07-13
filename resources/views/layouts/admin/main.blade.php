@@ -128,7 +128,7 @@
                     <div class="user-panel p-3 light mb-2">
                         <div>
                             <div class="float-left image">
-                                <img class="user_avatar" src="{{ asset('assets/admin/img/dummy/u2.png') }}" alt="User Image">
+                                <img class="user_avatar" src="{{ asset('assets/img/admin') }}/{{ auth()->user()->foto_admin }}" alt="User Image">
                             </div>
                             <div class="float-left info">
                                 <h6 class="font-weight-light mt-2 mb-1">{{ auth()->user()->username }}</h6>
@@ -152,27 +152,69 @@
                             <i class="icon icon-sailing-boat-water purple-text s-18"></i> <span>Dashboard</span>
                         </a>
                     </li>
+                    @if(auth()->user()->role_id == 1 ||auth()->user()->role_id == 2 )
                     <li class="treeview"><a href="/berita">
                             <i class="icon icon-newspaper purple-text s-14"></i> <span>Berita</span>
                         </a>
                     </li>
+                    @endif
+                    @if(auth()->user()->role_id == 1)
+                    <li class="treeview"><a href="/dokter-admin">
+                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Dokter</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/aduan-admin">
+                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Aduan</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/konsultasi-admin">
+                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Konsultasi</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/fasilitas">
+                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Fasilitas</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/jadwal-layanan-admin">
+                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Jadwal Layanan</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/manajemen-user">
+                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Manajemen User</span>
+                        </a>
+                    </li>
+                    @endif
+                    @if(auth()->user()->role_id == 1||auth()->user()->role_id == 3)
                     <li class="treeview"><a href="/publikasi">
                             <i class="icon icon-cloud-upload2 purple-text s-18"></i> <span>Publikasi</span>
                         </a>
                     </li>
-                    <li class="treeview"><a href="/dokter">
-                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Dokter</span>
-                        </a>
-                    </li>
+                    @endif
+                    @if(auth()->user()->role_id == 1||auth()->user()->role_id == 2)
                     <li class="header"><strong>Master Data</strong></li>
-                    <li class="treeview"><a href="/spesialis">
-                            <i class="icon icon-user-o purple-text s-18"></i> <span>Spesialis</span>
-                        </a>
-                    </li>
                     <li class="treeview"><a href="/kategori">
-                            <i class="icon icon-clipboard-list purple-text s-18"></i> <span>Kategori</span>
+                            <i class="icon icon-clipboard-list purple-text s-18"></i> <span>Kategori Berita</span>
                         </a>
                     </li>
+                    @endif
+                    @if(auth()->user()->role_id == 1)
+                    <li class="treeview"><a href="/spesialis">
+                            <i class="icon icon-user-o purple-text s-18"></i> <span>Spesialis Dokter</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/jenis-publikasi">
+                            <i class="icon icon-clipboard-list purple-text s-18"></i> <span>Jenis Publikasi</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/slider">
+                            <i class="icon icon-clipboard-list purple-text s-18"></i> <span>Slider</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/layanan-admin">
+                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Layanan</span>
+                        </a>
+                    </li>
+                    @endif
                 </ul>
             </section>
         </aside>
@@ -232,45 +274,15 @@
                             <!-- User Account-->
                             <li class="dropdown custom-dropdown user user-menu ">
                                 <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <img src="{{ asset('assets/admin/img/dummy/u8.png') }}" class="user-image" alt="User Image">
+                                    <img src="{{ asset('assets/img/admin') }}/{{ auth()->user()->foto_admin }}" class="user-image" alt="User Image">
                                     <i class="icon-more_vert "></i>
                                 </a>
                                 <div class="dropdown-menu p-4 dropdown-menu-right">
                                     <div class="row box justify-content-between my-4">
                                         <div class="col">
-                                            <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                            <a href="#" data-toggle="modal" data-target="#exampleModal1">
                                                 <i class="icon-apps purple lighten-2 avatar  r-5"></i>
                                                 <div class="pt-1">Log out</div>
-                                            </a>
-                                        </div>
-                                        <div class="col"><a href="#">
-                                                <i class="icon-beach_access pink lighten-1 avatar  r-5"></i>
-                                                <div class="pt-1">Profile</div>
-                                            </a></div>
-                                        <div class="col">
-                                            <a href="#">
-                                                <i class="icon-perm_data_setting indigo lighten-2 avatar  r-5"></i>
-                                                <div class="pt-1">Settings</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row box justify-content-between my-4">
-                                        <div class="col">
-                                            <a href="#">
-                                                <i class="icon-star light-green lighten-1 avatar  r-5"></i>
-                                                <div class="pt-1">Favourites</div>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#">
-                                                <i class="icon-save2 orange accent-1 avatar  r-5"></i>
-                                                <div class="pt-1">Saved</div>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#">
-                                                <i class="icon-perm_data_setting grey darken-3 avatar  r-5"></i>
-                                                <div class="pt-1">Settings</div>
                                             </a>
                                         </div>
                                     </div>
@@ -301,7 +313,7 @@
     </div>
     <!--/#app -->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -325,7 +337,11 @@
     </div>
 
     <script src="{{ asset('assets/admin/js/app.js') }}"></script>
-
+    <script>
+        $('.editor').trumbowyg({
+            svgPath: 'assets/admin/fonts/icons.svg'
+        });
+    </script>
     <!--
 --- Footer Part - Use Jquery anywhere at page.
 --- http://writing.colin-gourlay.com/safely-using-ready-before-including-jquery/
@@ -340,6 +356,25 @@
             })
         })(jQuery, document)
     </script>
+    <script>
+        function previewGambar(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#gambarPreview').attr('src', e.target.result);
+                    $('#gambarPreview').show();
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $('#gambarInput').change(function() {
+            previewGambar(this);
+        });
+    </script>
+
 </body>
 
 </html>

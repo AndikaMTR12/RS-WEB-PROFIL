@@ -20,7 +20,8 @@
                 </div>
                 <div class="form-group mb-2">
                     <label>Foto</label>
-                    <input type="file" name="image" class="form-control" style="border: none;">
+                    <input type="file" name="image" id="gambarInput" class="form-control" style="border: none;">
+                    <img id="gambarPreview" src="#" alt="Preview Gambar" style="display: none; max-width: 200px;">
                 </div>
                 <div class="form-group mb-2">
                     <label>Judul</label>

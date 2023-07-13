@@ -97,6 +97,6 @@ class DokterController extends Controller
         }
 
 
-        return redirect('/dokter');
+        return redirect('/dokter-admin');
     }
 }

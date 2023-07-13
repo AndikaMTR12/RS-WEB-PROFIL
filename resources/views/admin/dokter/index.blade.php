@@ -35,8 +35,8 @@
                             <td>{{ $d->spes->spesialis }}</td>
                             @endif
                             <td>
-                                <a href="/dokter/{{ $d->id_dokter }}/hapus" class="btn text-white bg-red"><i class="icon-trash-can"></i></a>
-                                <a href="/dokter/{{ $d->id_dokter }}" class="btn text-white bg-green"><i class="icon-edit"></i></a>
+                                <a href="/dokter-admin/{{ $d->id_dokter }}/hapus" class="btn text-white bg-red"><i class="icon-trash-can"></i></a>
+                                <a href="/dokter-admin/{{ $d->id_dokter }}" class="btn text-white bg-green"><i class="icon-edit"></i></a>
                             </td>
                         </tr>
                         @endforeach
@@ -60,12 +60,13 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/dokter/tambah" method="POST" enctype="multipart/form-data">
+            <form action="/dokter-admin/tambah" method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     @csrf
                     <div class="form-group">
                         <label>Foto Dokter</label>
-                        <input type="file" name="foto_dokter" class="form-control" style="border: none;">
+                        <input type="file" name="foto_dokter" id="gambarInput" class="form-control" style="border: none;">
+                        <img id="gambarPreview" src="#" alt="Preview Gambar" style="display: none; max-width: 200px;">
                     </div>
                     <div class="form-group">
                         <label>Nama Dokter</label>
@@ -78,7 +79,7 @@
                     <div class="form-group">
                         <label>Spesialis</label>
                         <select name="spesialis" class="form-control">
-                            <option selected>Spesialis</option>
+                            <option value="0" selected>Spesialis</option>
                             @foreach($spesialis as $s)
                             <option value="{{ $s->id_spesialis }}">{{ $s->spesialis }}</option>
                             @endforeach

@@ -60,7 +60,7 @@
                     <div class="form-group">
                         <label>Jenis Publiaksi</label>
                         <select name="menu_publikasi" class="form-control">
-                            <option selected>Kategori</option>
+                            <option selected>Jenis Publikasi</option>
                             @foreach($menu_publikasi as $m)
                             <option value="{{ $m->id_menu_publikasi }}">{{ $m->menu_publikasi }}</option>
                             @endforeach

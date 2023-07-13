@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\JadwalLayanan;
 use Illuminate\Http\Request;
 
 class InfoController extends Controller
@@ -11,7 +12,8 @@ class InfoController extends Controller
     {
         $title = "JADWAL PELAYANAN";
         $berita = $berita = Artikel::orderBy('id_artikel', 'desc')->paginate(3);
-        return view('info.jadwal_pelayanan', compact('title', 'berita'));
+        $jadwal = JadwalLayanan::all();
+        return view('info.jadwal_pelayanan', compact('title', 'berita', 'jadwal'));
     }
 
     public function tarif_pelayanan()

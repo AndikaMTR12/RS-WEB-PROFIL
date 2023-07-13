@@ -120,8 +120,8 @@
             <div id="primary" class="blue4 p-t-b-100 height-full responsive-phone">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <img src="assets/admin/img/icon/icon-plane.png" alt="">
+                        <div class="col-lg-6 text-center">
+                            <img src="assets/img/logo_konawe utara.jpg" alt="" width="300px" height="300px">
                         </div>
                         <div class="col-lg-6 p-t-100">
                             <div class="text-white">
