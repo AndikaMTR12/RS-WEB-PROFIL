@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Spesialis;
 use Illuminate\Http\Request;
+use App\Models\AduanKonsultasi;
 
 class SpesialisController extends Controller
 {
@@ -11,7 +12,9 @@ class SpesialisController extends Controller
     {
         $title = "SPESIALIS";
         $spesialis = Spesialis::all();
-        return view('admin.spesialis.index', compact('title', 'spesialis'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.spesialis.index', compact('title', 'spesialis', 'status_aduan', 'status_konsultasi'));
     }
 
     public function tambah(Request $request)
@@ -38,7 +41,9 @@ class SpesialisController extends Controller
     {
         $title = "Edit Spesialis";
         $spesialis = Spesialis::where('id_spesialis', $id)->get();
-        return view('admin.spesialis.edit', compact('title', 'spesialis'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.spesialis.edit', compact('title', 'spesialis', 'status_aduan', 'status_konsultasi'));
     }
 
     public function update(Request $request)

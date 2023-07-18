@@ -78,6 +78,11 @@
                     {{session()->get('message') }}
                 </div>
                 @endif
+                @if(session()->has('error'))
+                <div class="alert alert-danger">
+                    {{session()->get('error') }}
+                </div>
+                @endif
                 <form action="/aduan-konsultasi" method="post">
                     @csrf
                     <div class="row">
@@ -97,6 +102,11 @@
                     </div>
                     <div class="form-group mt-3">
                         <textarea class="form-control" name="pesan" rows="7" placeholder="Message" required=""></textarea>
+                    </div>
+                    <input type="hidden" name="status" value="1">
+                    <div class="form-group mt-3">
+                        <img src="{{ captcha_src('default') }}" alt="CAPTCHA">
+                        <input type="text" id="captcha" name="captcha" required>
                     </div>
                     <div class="my-3">
                     </div>

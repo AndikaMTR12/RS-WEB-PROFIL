@@ -70,11 +70,11 @@
                     </div>
                     <div class="form-group">
                         <label>Nama Dokter</label>
-                        <input type="text" name="nama_dokter" class="form-control">
+                        <input type="text" name="nama_dokter" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>NIP</label>
-                        <input type="text" name="nip" class="form-control">
+                        <input type="text" name="nip" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Spesialis</label>

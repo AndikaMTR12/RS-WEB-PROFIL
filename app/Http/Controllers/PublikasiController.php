@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MenuPublikasi;
 use App\Models\Publikasi;
-use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use App\Models\MenuPublikasi;
+use App\Models\AduanKonsultasi;
+use Illuminate\Support\Facades\File;
 
 class PublikasiController extends Controller
 {
@@ -14,7 +15,9 @@ class PublikasiController extends Controller
         $title = "PUBLIKASI";
         $publikasi = Publikasi::all();
         $menu_publikasi = MenuPublikasi::all();
-        return view('admin.publikasi.index', compact('title', 'publikasi', 'menu_publikasi'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.publikasi.index', compact('title', 'publikasi', 'menu_publikasi', 'status_aduan', 'status_konsultasi'));
     }
 
     public function tambah(Request $request)
@@ -57,7 +60,9 @@ class PublikasiController extends Controller
         $title = "Edit Publikasi";
         $publikasi = Publikasi::where('id_publikasi', $id)->get();
         $menu_publikasi = MenuPublikasi::all();
-        return view('admin.publikasi.edit', compact('title', 'publikasi', 'menu_publikasi'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.publikasi.edit', compact('title', 'publikasi', 'menu_publikasi', 'status_aduan', 'status_konsultasi'));
     }
 
     public function update(Request $request)
@@ -94,32 +99,13 @@ class PublikasiController extends Controller
         return redirect('/publikasi');
     }
 
-    public function laporan_pengaduan()
+    public function publikasi_beranda($id)
     {
-        $title = "LAPORAN PENGADUAN";
-        $publikasi = Publikasi::where('id_menu_publikasi', 1)->get();
-        return view('publikasi.laporan_pengaduan', compact('title', 'publikasi'));
-    }
-
-    public function standar_layanan()
-    {
-        $title = "STANDAR LAYANAN";
-        $publikasi = Publikasi::where('id_menu_publikasi', 2)->get();
-        return view('publikasi.standar_layanan', compact('title', 'publikasi'));
-    }
-
-    public function skm()
-    {
-        $title = "SKM";
-        $publikasi = Publikasi::where('id_menu_publikasi', 3)->get();
-        return view('publikasi.skm', compact('title', 'publikasi'));
-    }
-
-    public function indikatormutu()
-    {
-        $title = "INDIKATOR MUTU NASIONAL";
-        $publikasi = Publikasi::where('id_menu_publikasi', 4)->get();
-        return view('publikasi.indikatormutu', compact('title', 'publikasi'));
+        $title = $id;
+        $menu = MenuPublikasi::where('menu_publikasi', $id)->pluck('id_menu_publikasi');
+        $publikasi = MenuPublikasi::all();
+        $publikasis = Publikasi::where('id_menu_publikasi', $menu)->get();
+        return view('publikasi.index', compact('title', 'publikasis', 'publikasi'));
     }
 
     public function download($file_name)

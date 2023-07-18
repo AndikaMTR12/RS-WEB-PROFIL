@@ -55,7 +55,7 @@
                     @csrf
                     <div class="form-group">
                         <label>Spesialis</label>
-                        <input type="text" name="spesialis" class="form-control">
+                        <input type="text" name="spesialis" class="form-control" required>
                     </div>
                 </div>
                 <div class="modal-footer">

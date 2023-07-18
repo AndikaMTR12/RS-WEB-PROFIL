@@ -14,6 +14,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Pesan</th>
+                            <th>Status</th>
                         </tr>
                         <?php
                         $no = 1;
@@ -24,6 +25,11 @@
                             <td>{{ $a->nama}}</td>
                             <td>{{ $a->email}}</td>
                             <td>{{ $a->pesan}}</td>
+                            @if($a->status == 1)
+                            <td><a href="/konsultasi-admin/{{ $a->id_aduan_konsultasi }}" class="btn btn-danger">Tindak Lanjuti</a></td>
+                            @else
+                            <td><button class="btn btn-success">Selesai</button></td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

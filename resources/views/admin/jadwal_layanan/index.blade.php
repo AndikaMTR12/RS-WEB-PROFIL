@@ -61,14 +61,17 @@
                         <label>Foto Dokter</label>
                         <input type="file" name="foto_dokter" id="gambarInput" class="form-control" style="border: none;">
                         <img id="gambarPreview" src="#" alt="Preview Gambar" style="display: none; max-width: 200px;">
+                        @error('foto_dokter')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label>Jadwal</label>
-                        <input type="text" name="jadwal" class="form-control">
+                        <input type="text" name="jadwal" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Layanan</label>
-                        <input type="text" name="layanan" class="form-control">
+                        <input type="text" name="layanan" class="form-control" required>
                     </div>
                 </div>
                 <div class="modal-footer">

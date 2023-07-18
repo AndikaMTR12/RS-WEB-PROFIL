@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use App\Models\AduanKonsultasi;
 use Illuminate\Support\Facades\File;
 
 class SliderController extends Controller
@@ -12,7 +13,9 @@ class SliderController extends Controller
     {
         $title = "Slider";
         $slider = Slider::all();
-        return view('admin.slider.index', compact('title', 'slider'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.slider.index', compact('title', 'slider', 'status_aduan', 'status_konsultasi'));
     }
 
     public function tambah(Request $request)
@@ -49,7 +52,9 @@ class SliderController extends Controller
     {
         $title = "Edit Slider";
         $slider = Slider::where('id_slider', $id)->get();
-        return view('admin.slider.edit', compact('title', 'slider'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.slider.edit', compact('title', 'slider', 'status_aduan', 'status_konsultasi'));
     }
 
     public function update(Request $request)

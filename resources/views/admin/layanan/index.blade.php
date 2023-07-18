@@ -55,7 +55,7 @@
                     @csrf
                     <div class="form-group">
                         <label>Nama Layanan</label>
-                        <input type="text" name="nama_layanan" class="form-control">
+                        <input type="text" name="nama_layanan" class="form-control" required>
                     </div>
                 </div>
                 <div class="modal-footer">

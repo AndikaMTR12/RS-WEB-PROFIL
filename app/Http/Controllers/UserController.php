@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\AduanKonsultasi;
 use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
@@ -12,8 +13,10 @@ class UserController extends Controller
     {
         $title = "Manajemen User";
         $user = User::all();
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
 
-        return view('admin.manajemen_user.index', compact('title', 'user'));
+        return view('admin.manajemen_user.index', compact('title', 'user', 'status_aduan', 'status_konsultasi'));
     }
 
     public function tambah(Request $request)
@@ -21,7 +24,7 @@ class UserController extends Controller
         $request->validate([
             'username' => 'required',
             'foto_admin' => 'file|image|mimes:jpeg,png,jpg',
-            'password' => 'required|min:3|max:5',
+            'password' => 'required|min:3|max:15',
             'role_id' => 'required',
         ]);
         if ($request->foto_admin == "") {
@@ -60,8 +63,10 @@ class UserController extends Controller
     {
         $title = "Edit Manajemen User";
         $user = User::where('id', $id)->get();
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
 
-        return view('admin.manajemen_user.edit', compact('title', 'user'));
+        return view('admin.manajemen_user.edit', compact('title', 'user', 'status_aduan', 'status_konsultasi'));
     }
 
     public function update(Request $request)
@@ -71,13 +76,26 @@ class UserController extends Controller
             'foto_admin' => 'file|image|mimes:jpeg,png,jpg',
             'role_id' => 'required',
         ]);
+
+        $user = User::where('id', $request->id)->get();
+        foreach ($user as $u) {
+            $pass = $u->password;
+        }
         if ($request->foto_admin == "") {
-            User::where('id', $request->id)->update([
-                'username' => $request->username,
-                'role_id' => $request->role_id,
-            ]);
+            if ($request->password == $pass) {
+                User::where('id', $request->id)->update([
+                    'username' => $request->username,
+                    'role_id' => $request->role_id,
+                ]);
+            } else {
+                $password = bcrypt($request->password);
+                User::where('id', $request->id)->update([
+                    'username' => $request->username,
+                    'password' => $password,
+                    'role_id' => $request->role_id,
+                ]);
+            }
         } else {
-            $password = bcrypt($request->password);
             $foto = $request->file('foto_admin');
 
             $nama_foto = time() . "_" . $foto->getClientOriginalName();
@@ -85,12 +103,21 @@ class UserController extends Controller
             // isi dengan nama folder tempat kemana file diupload
             $tujuan_upload = 'assets/img/admin';
             $foto->move($tujuan_upload, $nama_foto);
-            User::where('id', $request->id)->update([
-                'username' => $request->username,
-                'foto_admin' => $nama_foto,
-                'password' => $password,
-                'role_id' => $request->role_id,
-            ]);
+            if ($request->password == $pass) {
+                User::where('id', $request->id)->update([
+                    'username' => $request->username,
+                    'foto_admin' => $nama_foto,
+                    'role_id' => $request->role_id,
+                ]);
+            } else {
+                $password = bcrypt($request->password);
+                User::where('id', $request->id)->update([
+                    'username' => $request->username,
+                    'password' => $password,
+                    'foto_admin' => $nama_foto,
+                    'role_id' => $request->role_id,
+                ]);
+            }
         }
 
 

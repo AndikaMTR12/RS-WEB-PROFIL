@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\JadwalLayanan;
+use App\Models\AduanKonsultasi;
 use Illuminate\Support\Facades\File;
 
 class JadwalController extends Controller
@@ -12,7 +13,9 @@ class JadwalController extends Controller
     {
         $title = "Jadwal Layanan";
         $jadwal = JadwalLayanan::all();
-        return view('admin.jadwal_layanan.index', compact('title', 'jadwal'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.jadwal_layanan.index', compact('title', 'jadwal', 'status_aduan', 'status_konsultasi'));
     }
 
     public function tambah(Request $request)
@@ -61,7 +64,9 @@ class JadwalController extends Controller
     {
         $title = "Edit Jadwal Layanan";
         $jadwal = JadwalLayanan::where('id_jadwal_layanan', $id)->get();
-        return view('admin.jadwal_layanan.edit', compact('title', 'jadwal'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.jadwal_layanan.edit', compact('title', 'jadwal', 'status_aduan', 'status_konsultasi'));
     }
 
     public function update(Request $request)

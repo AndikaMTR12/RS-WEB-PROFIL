@@ -55,7 +55,7 @@
                     @csrf
                     <div class="form-group">
                         <label>Jenis Publikasi</label>
-                        <input type="text" name="menu_publikasi" class="form-control">
+                        <input type="text" name="menu_publikasi" class="form-control" required>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -65,21 +65,24 @@
                     @csrf
                     <div class="form-group">
                         <label>Foto User</label>
-                        <input type="file" name="foto_admin" id="gambarInput" class="form-control" style="border: none;">
+                        <input type="file" name="foto_admin" id="gambarInput" class="form-control" style="border: none;" accept=".jpg, .jpeg, .png">
                         <img id="gambarPreview" src="#" alt="Preview Gambar" style="display: none; max-width: 200px;">
+                        @error('foto_admin')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" name="username" class="form-control">
+                        <input type="text" name="username" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" name="password" class="form-control">
+                        <input type="password" name="password" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Role ID</label>
-                        <select name="role_id" class="form-control">
-                            <option selected>Role ID</option>
+                        <select name="role_id" class="form-control" required>
+                            <option value="">Role ID</option>
                             <option value="1">Admin</option>
                             <option value="2">Admin Berita</option>
                             <option value="3">Admin Publikasi</option>

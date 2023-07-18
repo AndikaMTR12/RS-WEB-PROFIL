@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('aduan_konsultasis', function (Blueprint $table) {
-            $table->id('id_aduan_konsultasi');
-            $table->string('jenis_pesan');
-            $table->string('nama');
-            $table->string('email');
-            $table->text('pesan');
-            $table->integer('status');
+        Schema::create('tarifs', function (Blueprint $table) {
+            $table->id('id_tarif');
+            $table->string('jenis_tarif');
+            $table->string('kd_tarif');
+            $table->integer('biaya');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('aduan_konsultasis');
+        Schema::dropIfExists('tarifs');
     }
 };

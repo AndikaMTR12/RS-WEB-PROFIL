@@ -59,8 +59,8 @@
                     @csrf
                     <div class="form-group">
                         <label>Kategori</label>
-                        <select name="id_kategori" class="form-control">
-                            <option selected>Kategori</option>
+                        <select name="id_kategori" class="form-control" required>
+                            <option value="">Kategori</option>
                             @foreach($kategori as $k)
                             <option value="{{ $k->id_kategori }}">{{ $k->nama_kategori }}</option>
                             @endforeach
@@ -73,11 +73,11 @@
                     </div>
                     <div class="form-group">
                         <label>Judul</label>
-                        <textarea name="judul" class="form-control"></textarea>
+                        <textarea name="judul" class="form-control" required></textarea>
                     </div>
                     <div class="form-group">
                         <label>Berita</label>
-                        <textarea name="desk_artikel" class="form-control editor"></textarea>
+                        <textarea name="desk_artikel" class="form-control editor" required></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -57,12 +57,12 @@
                     @csrf
                     <div class="form-group">
                         <label>Nama Fasilitas</label>
-                        <input type="text" name="nama_fasilitas" class="form-control">
+                        <input type="text" name="nama_fasilitas" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Layanan</label>
-                        <select name="id_layanan" class="form-control">
-                            <option selected>Layanan</option>
+                        <select name="id_layanan" class="form-control" required>
+                            <option value="">Layanan</option>
                             @foreach($layanan as $l)
                             <option value="{{ $l->id_layanan }}">{{ $l->nama_layanan }}</option>
                             @endforeach

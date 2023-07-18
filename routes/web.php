@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AduanController;
+use App\Http\Controllers\TarifController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\JadwalController;
@@ -21,7 +21,8 @@ use App\Http\Controllers\PublikasiController;
 use App\Http\Controllers\SpesialisController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\MenuPublikasiController;
-
+use App\Models\AduanKonsultasi;
+use Mews\Captcha\Facades\Captcha;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +39,7 @@ use App\Http\Controllers\MenuPublikasiController;
 // });
 // Beranda
 Route::get('/', [BerandaController::class, 'index']);
+
 
 // Aduan dan Konsultasi
 Route::post('/aduan-konsultasi', [BerandaController::class, 'aduan']);
@@ -56,14 +58,8 @@ Route::get('/layanan', [LayananController::class, 'layanan']);
 Route::get('/jadwal-pelayanan', [InfoController::class, 'jadwal_dokter']);
 Route::get('/tarif-pelayanan', [InfoController::class, 'tarif_pelayanan']);
 // Publikasi
-Route::get('/laporan-pengaduan', [PublikasiController::class, 'laporan_pengaduan']);
-Route::get('/laporan-pengaduan/{file_name}/download', [PublikasiController::class, 'download'])->name('laporan-pengaduan');
-Route::get('/standar-layanan', [PublikasiController::class, 'standar_layanan']);
-Route::get('/standar-pelayanan/{file_name}/download', [PublikasiController::class, 'download'])->name('standar-pelayanan');
-Route::get('/skm', [PublikasiController::class, 'skm']);
-Route::get('/skm/{file_name}/download', [PublikasiController::class, 'download'])->name('skm');
-Route::get('/indikator-mutu-nasional', [PublikasiController::class, 'indikatormutu']);
-Route::get('/indikator-mutu-nasional/{file_name}/download', [PublikasiController::class, 'download'])->name('indikator-mutu-nasional');
+Route::get('/publikasi-beranda/{id}', [PublikasiController::class, 'publikasi_beranda']);
+Route::get('/publikasi-beranda/{file_name}/download', [PublikasiController::class, 'download'])->name('laporan-pengaduan');
 
 // Admin
 Route::group(['middleware' => ['guest']], function () {
@@ -125,8 +121,10 @@ Route::group(['middleware' => ['auth', 'cekLevel:1']], function () {
     Route::put('/slider/update', [SliderController::class, 'update']);
     // Aduan
     Route::get('/aduan-admin', [AduanController::class, 'index']);
+    Route::get('/aduan-admin/{id}', [AduanController::class, 'update_status']);
     // Konsultasi
     Route::get('/konsultasi-admin', [KonsultasiController::class, 'index']);
+    Route::get('/konsultasi-admin/{id}', [KonsultasiController::class, 'update_status']);
     // Layanan
     Route::get('/layanan-admin', [LayananController::class, 'index']);
     Route::post('/layanan-admin/tambah', [LayananController::class, 'tambah']);
@@ -151,4 +149,10 @@ Route::group(['middleware' => ['auth', 'cekLevel:1']], function () {
     Route::get('/manajemen-user/{id}/hapus', [UserController::class, 'hapus']);
     Route::get('/manajemen-user/{id}', [UserController::class, 'edit']);
     Route::put('/manajemen-user/update', [UserController::class, 'update']);
+    // Tarif
+    Route::get('/tarif-pelayanan-admin', [TarifController::class, 'index']);
+    Route::post('/tarif-pelayanan-admin/tambah', [TarifController::class, 'tambah']);
+    Route::get('/tarif-pelayanan-admin/{id}/hapus', [TarifController::class, 'hapus']);
+    Route::get('/tarif-pelayanan-admin/{id}', [TarifController::class, 'edit']);
+    Route::put('/tarif-pelayanan-admin/update', [TarifController::class, 'update']);
 });

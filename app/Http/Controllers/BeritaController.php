@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use App\Models\AduanKonsultasi;
 use Illuminate\Support\Facades\File;
 
 class BeritaController extends Controller
@@ -14,7 +15,9 @@ class BeritaController extends Controller
         $title = "BERITA";
         $berita = Artikel::all();
         $kategori = Kategori::all();
-        return view('admin.berita.index', compact('title', 'berita', 'kategori'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.berita.index', compact('title', 'berita', 'kategori', 'status_aduan', 'status_konsultasi'));
     }
 
     public function tambah(Request $request)
@@ -60,7 +63,9 @@ class BeritaController extends Controller
         $title = "Edit Berita";
         $berita = Artikel::where('id_artikel', $id)->get();
         $kategori = Kategori::all();
-        return view('admin.berita.edit', compact('title', 'berita', 'kategori'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.berita.edit', compact('title', 'berita', 'kategori', 'status_aduan', 'status_konsultasi'));
     }
 
     public function update(Request $request)

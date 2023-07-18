@@ -8,29 +8,33 @@
             <!-- /.box-header -->
             <div class="box-body no-padding">
                 <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModal">
-                    Tambah Publikasi
+                    Tambah Tarif Layanan
                 </button>
                 <table class="table table-sm">
                     <tbody>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>Jenis Publikasi</th>
-                            <th>Nama Publiaksi</th>
-                            <th>File</th>
+                            <th>Jenis Tindakan</th>
+                            <th>Sub Tindakan</th>
+                            <th>Biaya</th>
                             <th>Aksi</th>
                         </tr>
                         <?php
                         $no = 1;
                         ?>
-                        @foreach($publikasi as $p)
+                        @foreach($tarif as $t)
                         <tr>
                             <td>{{ $no++ }}</td>
-                            <td>{{ $p->menu_publikasi->menu_publikasi }}</td>
-                            <td>{{ $p->nama_publikasi }}</td>
-                            <td>{{ $p->nama_file }}</td>
+                            <td>{{ $t->jenis_tarif}}</td>
+                            <td>{{ $t->kd_tarif}}</td>
+                            @if($t->biaya == "")
+                            <td></td>
+                            @else
+                            <td>Rp. {{ number_format($t->biaya,2,',','.') }}</td>
+                            @endif
                             <td>
-                                <a href="/publikasi/{{ $p->id_publikasi }}/hapus" class="btn text-white bg-red"><i class="icon-trash-can"></i></a>
-                                <a href="/publikasi/{{ $p->id_publikasi }}" class="btn text-white bg-green"><i class="icon-edit"></i></a>
+                                <a href="/tarif-pelayanan-admin/{{ $t->id_tarif }}/hapus" class="btn text-white bg-red"><i class="icon-trash-can"></i></a>
+                                <a href="/tarif-pelayanan-admin/{{ $t->id_tarif }}" class="btn text-white bg-green"><i class="icon-edit"></i></a>
                             </td>
                         </tr>
                         @endforeach
@@ -49,30 +53,25 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Publikasi</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Tarif Pelayanan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/publikasi/tambah" method="POST" enctype="multipart/form-data">
+            <form action="/tarif-pelayanan-admin/tambah" method="POST">
                 <div class="modal-body">
                     @csrf
                     <div class="form-group">
-                        <label>Jenis Publiaksi</label>
-                        <select name="menu_publikasi" class="form-control" required>
-                            <option value="">Jenis Publikasi</option>
-                            @foreach($menu_publikasi as $m)
-                            <option value="{{ $m->id_menu_publikasi }}">{{ $m->menu_publikasi }}</option>
-                            @endforeach
-                        </select>
+                        <label>Jenis Tindakan</label>
+                        <input type="text" name="jenis_tarif" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>Nama Publikasi</label>
-                        <input type="text" name="nama_publikasi" class="form-control" required>
+                        <label>Sub Tindakan</label>
+                        <input type="text" name="kd_tarif" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label>File</label>
-                        <input type="file" name="nama_file" class="form-control" style="border: none;" accept=".doc,.docx,.pdf,.xls,.xlsx">
+                        <label>Biaya</label>
+                        <input type="text" name="biaya" class="form-control">
                     </div>
                 </div>
                 <div class="modal-footer">

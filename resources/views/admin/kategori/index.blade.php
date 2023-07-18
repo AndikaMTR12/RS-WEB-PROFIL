@@ -55,7 +55,7 @@
                     @csrf
                     <div class="form-group">
                         <label>Kategori</label>
-                        <input type="text" name="nama_kategori" class="form-control">
+                        <input type="text" name="nama_kategori" class="form-control" required>
                     </div>
                 </div>
                 <div class="modal-footer">

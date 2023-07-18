@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use App\Models\AduanKonsultasi;
 
 class KategoriController extends Controller
 {
@@ -11,7 +12,9 @@ class KategoriController extends Controller
     {
         $title = "KATEGORI";
         $kategori = Kategori::all();
-        return view("admin.kategori.index", compact('title', 'kategori'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view("admin.kategori.index", compact('title', 'kategori', 'status_aduan', 'status_konsultasi'));
     }
 
     public function tambah(Request $request)
@@ -36,7 +39,9 @@ class KategoriController extends Controller
     {
         $title = "EDIT KATEGORI";
         $kategori = Kategori::where('id_kategori', $id)->get();
-        return view('admin.kategori.edit', compact('title', 'kategori'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.kategori.edit', compact('title', 'kategori', 'status_aduan', 'status_konsultasi'));
     }
 
     public function update(Request $request)

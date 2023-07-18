@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Dokter;
 use App\Models\Spesialis;
-use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use App\Models\AduanKonsultasi;
+use Illuminate\Support\Facades\File;
 
 class DokterController extends Controller
 {
@@ -14,7 +15,9 @@ class DokterController extends Controller
         $title = "DOKTER";
         $dokter = Dokter::all();
         $spesialis = Spesialis::all();
-        return view('admin.dokter.index', compact('title', 'dokter', 'spesialis'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.dokter.index', compact('title', 'dokter', 'spesialis', 'status_aduan', 'status_konsultasi'));
     }
 
     public function tambah(Request $request)
@@ -61,7 +64,9 @@ class DokterController extends Controller
         $title = "Edit Dokter";
         $dokter = Dokter::where('id_dokter', $id)->get();
         $spesialis = Spesialis::all();
-        return view('admin.dokter.edit', compact('title', 'dokter', 'spesialis'));
+        $status_aduan = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Aduan')->count();
+        $status_konsultasi = AduanKonsultasi::where('status', 1)->where('jenis_pesan', 'Konsultasi')->count();
+        return view('admin.dokter.edit', compact('title', 'dokter', 'spesialis', 'status_aduan', 'status_konsultasi'));
     }
 
     public function update(Request $request)

@@ -122,8 +122,6 @@
                     <!-- <img src="{{ asset('assets/admin/img/basic/logo.png') }}" alt=""> -->
                 </div>
                 <div class="relative">
-                    <a data-toggle="collapse" href="#userSettingsCollapse" role="button" aria-expanded="false" aria-controls="userSettingsCollapse" class="btn-fab btn-fab-sm absolute fab-right-bottom fab-top btn-primary shadow1 ">
-                        <i class="icon icon-cogs"></i>
                     </a>
                     <div class="user-panel p-3 light mb-2">
                         <div>
@@ -132,16 +130,6 @@
                             </div>
                             <div class="float-left info">
                                 <h6 class="font-weight-light mt-2 mb-1">{{ auth()->user()->username }}</h6>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="collapse multi-collapse" id="userSettingsCollapse">
-                            <div class="list-group mt-3 shadow">
-                                <a href="index.html" class="list-group-item list-group-item-action ">
-                                    <i class="mr-2 icon-umbrella text-blue"></i>Profile
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action"><i class="mr-2 icon-cogs text-yellow"></i>Settings</a>
-                                <a href="#" class="list-group-item list-group-item-action"><i class="mr-2 icon-security text-purple"></i>Change Password</a>
                             </div>
                         </div>
                     </div>
@@ -154,33 +142,43 @@
                     </li>
                     @if(auth()->user()->role_id == 1 ||auth()->user()->role_id == 2 )
                     <li class="treeview"><a href="/berita">
-                            <i class="icon icon-newspaper purple-text s-14"></i> <span>Berita</span>
+                            <i class="icon icon-newspaper-o purple-text s-14"></i> <span>Berita</span>
                         </a>
                     </li>
                     @endif
                     @if(auth()->user()->role_id == 1)
                     <li class="treeview"><a href="/dokter-admin">
-                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Dokter</span>
+                            <i class="icon icon-user-md purple-text s-18"></i> <span>Dokter</span>
                         </a>
                     </li>
                     <li class="treeview"><a href="/aduan-admin">
-                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Aduan</span>
+                            <i class="icon icon-warning4 purple-text s-18"></i> <span>Aduan</span>
+                            @if($status_aduan == 1)
+                            <span class="badge badge-danger">{{ $status_aduan }}</span>
+                            @endif
                         </a>
                     </li>
                     <li class="treeview"><a href="/konsultasi-admin">
-                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Konsultasi</span>
+                            <i class="icon icon-healing purple-text s-18"></i> <span>Konsultasi</span>
+                            @if($status_konsultasi == 1)
+                            <span class="badge badge-danger">{{ $status_konsultasi }}</span>
+                            @endif
                         </a>
                     </li>
                     <li class="treeview"><a href="/fasilitas">
-                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Fasilitas</span>
+                            <i class="icon icon-building-o purple-text s-18"></i> <span>Fasilitas</span>
                         </a>
                     </li>
                     <li class="treeview"><a href="/jadwal-layanan-admin">
-                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Jadwal Layanan</span>
+                            <i class="icon icon-clock-o purple-text s-18"></i> <span>Jadwal Layanan</span>
                         </a>
                     </li>
                     <li class="treeview"><a href="/manajemen-user">
-                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Manajemen User</span>
+                            <i class="icon icon-users purple-text s-18"></i> <span>Manajemen User</span>
+                        </a>
+                    </li>
+                    <li class="treeview"><a href="/tarif-pelayanan-admin">
+                            <i class="icon icon-attach_money purple-text s-18"></i> <span>Tarif Pelayanan</span>
                         </a>
                     </li>
                     @endif
@@ -193,7 +191,7 @@
                     @if(auth()->user()->role_id == 1||auth()->user()->role_id == 2)
                     <li class="header"><strong>Master Data</strong></li>
                     <li class="treeview"><a href="/kategori">
-                            <i class="icon icon-clipboard-list purple-text s-18"></i> <span>Kategori Berita</span>
+                            <i class="icon icon-newspaper  purple-text s-18"></i> <span>Kategori Berita</span>
                         </a>
                     </li>
                     @endif
@@ -207,11 +205,11 @@
                         </a>
                     </li>
                     <li class="treeview"><a href="/slider">
-                            <i class="icon icon-clipboard-list purple-text s-18"></i> <span>Slider</span>
+                            <i class="icon icon-sliders purple-text s-18"></i> <span>Slider</span>
                         </a>
                     </li>
                     <li class="treeview"><a href="/layanan-admin">
-                            <i class="icon icon-user-circle purple-text s-18"></i> <span>Layanan</span>
+                            <i class="icon icon-airplay purple-text s-18"></i> <span>Layanan</span>
                         </a>
                     </li>
                     @endif
@@ -240,37 +238,6 @@
                     <!--Top Menu Start -->
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
-                            <!-- Notifications -->
-                            <li class="dropdown custom-dropdown notifications-menu">
-                                <a href="#" class=" nav-link" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="icon-notifications "></i>
-                                    <span class="badge badge-danger badge-mini rounded-circle">4</span>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li class="header">You have 10 notifications</li>
-                                    <li>
-                                        <!-- inner menu: contains the actual data -->
-                                        <ul class="menu">
-                                            <li>
-                                                <a href="#">
-                                                    <i class="icon icon-data_usage text-success"></i> 5 new members joined today
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="icon icon-data_usage text-danger"></i> 5 new members joined today
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="icon icon-data_usage text-yellow"></i> 5 new members joined today
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="footer p-2 text-center"><a href="#">View all</a></li>
-                                </ul>
-                            </li>
                             <!-- User Account-->
                             <li class="dropdown custom-dropdown user user-menu ">
                                 <a href="#" class="nav-link" data-toggle="dropdown">

@@ -37,10 +37,9 @@
                 </li>
                 <li class="dropdown"><a href="#"><span>Publikasi</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a class="nav-link {{ $title == 'LAPORAN PENGADUAN' ? 'active' : null}}" href="/laporan-pengaduan">Laporan Pengaduan</a></li>
-                        <li><a class="nav-link {{ $title == 'STANDAR LAYANAN' ? 'active' : null}}" href="/standar-layanan">Standar Layanan</a></li>
-                        <li><a class="nav-link {{ $title == 'SKM' ? 'active' : null}}" href="/skm">SKM</a></li>
-                        <li><a class="nav-link {{ $title == 'INDIKATOR MUTU NASIONAL' ? 'active' : null}}" href="/indikator-mutu-nasional">Indikator Mutu Nasional</a></li>
+                        @foreach($publikasi as $p)
+                        <li><a class="nav-link {{ $title == $p->menu_publikasi ? 'active' : null}}" href="/publikasi-beranda/{{ $p->menu_publikasi }}">{{ $p->menu_publikasi }}</a></li>
+                        @endforeach
                     </ul>
                 </li>
 

@@ -57,6 +57,9 @@
                         <label>Slider</label>
                         <input type="file" name="nama_slider" id="gambarInput" class="form-control" style="border: none;">
                         <img id="gambarPreview" src="#" alt="Preview Gambar" style="display: none; max-width: 200px;">
+                        @error('nama_slider')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="modal-footer">

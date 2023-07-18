@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('container')
-<section class="skm">
+<section class="publikasi">
     <div style="height: 100px;"></div>
-    <h3>SKM</h3>
+    <h3>{{ $title }}</h3>
     <table class="table">
         <thead class="table-light">
             <th>No</th>
@@ -14,11 +14,11 @@
             <?php
             $no = 1;
             ?>
-            @foreach($publikasi as $p)
+            @foreach($publikasis as $p)
             <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $p->nama_publikasi }}</td>
-                <td><a href="/skm/{{ $p->nama_file }}/download" class="btn btn-success">Download</a></td>
+                <td><a href="/laporan-pengaduan/{{ $p->nama_file }}/download" class="btn btn-success">Download</a></td>
             </tr>
             @endforeach
         </tbody>
